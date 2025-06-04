@@ -343,19 +343,19 @@ describe('hasKey', () => {
 
 		expect(result).toEqual(false);
 	});
-	it('should return false if the input is an object without the key', () => {
-		const x = { a: 3 };
-		const result = hasKey(x, 'a');
+       it('should return false if the input is an object without the key', () => {
+               const x = { a: 3 };
+               const result = hasKey(x, 'b');
 
-		expect(result).toEqual(true);
-	});
+               expect(result).toEqual(false);
+       });
 
-	it('should return true if the input is an object with the key', () => {
-		const x = { a: 3 };
-		const result = hasKey(x, 'b');
+       it('should return true if the input is an object with the key', () => {
+               const x = { a: 3 };
+               const result = hasKey(x, 'a');
 
-		expect(result).toEqual(false);
-	});
+               expect(result).toEqual(true);
+       });
 
 	it('should provide a type guard', () => {
 		const x: unknown = { a: 3 };
